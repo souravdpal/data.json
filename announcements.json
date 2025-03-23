@@ -1,1 +1,17 @@
-
+[
+    {
+        "message": "🎉 Check out our new Electronics deals on Amazon! Limited stock available!",
+        "link": "https://souravdpal.github.io/store/p.html?category=electronics",
+        "icon": "fas fa-bolt"
+    },
+    {
+        "message": "📚 New Books category added! Explore now!",
+        "link": "https://souravdpal.github.io/store/p.html?category=books",
+        "icon": "fas fa-book"
+    },
+    {
+        "message": "✨ Follow us on social media for exclusive updates!",
+        "link": "https://twitter.com/yourprofile",
+        "icon": "fas fa-share-alt"
+    }
+]
