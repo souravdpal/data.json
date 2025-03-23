@@ -6,7 +6,8 @@
     "subcategory": "gaming",
     "img": "https://m.media-amazon.com/images/I/61P+4rb4u9L._SX425_.jpg",
     "link": "https://amzn.to/4hBDjgw",
-    "price": "₹16,915"
+    "price": "₹16,915",
+    "rating": 4.5
   },
   {
     "id": 2,
@@ -15,7 +16,8 @@
     "subcategory": "bottles",
     "img": "https://m.media-amazon.com/images/I/51vbZ9K7WmL._SX522_.jpg",
     "link": "https://amzn.to/4bRstBP",
-    "price": "₹1,929"
+    "price": "₹1,929",
+    "rating": 4.3
   },
   {
     "id": 3,
@@ -24,7 +26,8 @@
     "subcategory": "novel",
     "img": "https://m.media-amazon.com/images/I/71+S9smg7qL._SY342_.jpg",
     "link": "https://amzn.to/41VnvPL",
-    "price": "₹162"
+    "price": "₹162",
+    "rating": 4.7
   },
   {
     "id": 4,
@@ -33,7 +36,8 @@
     "subcategory": "novel",
     "img": "https://m.media-amazon.com/images/I/81l3rZK4lnL._SY342_.jpg",
     "link": "https://amzn.to/4ivgEDS",
-    "price": "₹354"
+    "price": "₹354",
+    "rating": 4.6
   },
   {
     "id": 5,
@@ -42,7 +46,7 @@
     "subcategory": "indoor",
     "img": "https://m.media-amazon.com/images/I/71KxBYAr9zL._SX425_.jpg",
     "link": "https://amzn.to/4kRIvj3",
-    "price": "Not Available"
+    "price": "Not Available",
+    "rating": 4.4
   }
 ]
-
