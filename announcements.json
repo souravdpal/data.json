@@ -10,8 +10,13 @@
         "icon": "fas fa-book"
     },
     {
-        "message": "✨ Follow us on social media for exclusive updates!",
-        "link": "https://twitter.com/yourprofile",
+        "message": "✨ Follow me on instagram!",
+        "link": "www.instagram.com/itz_srvsourav",
+        "icon": "fas fa-share-alt"
+    },
+    {
+        "message": "buy now new books and worthy too!",
+        "link": "https://souravdpal.github.io/store/p.html?category=books",
         "icon": "fas fa-share-alt"
     }
 ]
