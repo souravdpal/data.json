@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Smartphone",
+    "category": "electronics",
+    "subcategory": "phones",
+    "img": "images/product1.jpg",
+    "link": "https://amzn.to/xyz",
+    "price": "$499",
+    "rating": 4.5
+  },
+  {
+    "id": 2,
+    "name": "Smart Watch",
+    "category": "electronics",
+    "subcategory": "watches",
+    "img": "images/product2.jpg",
+    "link": "https://amzn.to/xyz",
+    "price": "$199",
+    "rating": 4.2
+  },
+  {
+    "id": 2,
+    "name": "gaming",
+    "category": "electronics",
+    "subcategory": "watches",
+    "img": "images/product2.jpg",
+    "link": "https://amzn.to/xyz",
+    "price": "$199",
+    "rating": 4.2
+  }
+]
