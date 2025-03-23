@@ -5,7 +5,7 @@
     "category": "electronics",
     "subcategory": "phones",
     "img": "images/product1.jpg",
-    "link": "https://amzn.to/xyz",
+    "link": "https://m.media-amazon.com/images/I/71kWn-FcciL._AC_UL320_.jpg",
     "price": "$499",
     "rating": 4.5
   },
@@ -14,7 +14,7 @@
     "name": "Smart Watch",
     "category": "electronics",
     "subcategory": "watches",
-    "img": "images/product2.jpg",
+    "img": "https://m.media-amazon.com/images/I/71kWn-FcciL._AC_UL320_.jpg",
     "link": "https://amzn.to/xyz",
     "price": "$199",
     "rating": 4.2
