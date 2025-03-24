@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product JSON Manager</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        input, select, button { display: block; margin-bottom: 10px; padding: 5px; width: 300px; }
+        button { padding: 10px; cursor: pointer; background: #007bff; color: white; border: none; }
+        pre { background: #f4f4f4; padding: 10px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h2>Enter Product Details</h2>
+    
+    <select id="fileChoice">
+        <option value="data.json">Update Data JSON</option>
+        <option value="announcements.json">Update Announcements JSON</option>
+    </select>
+
+    <input type="text" id="name" placeholder="Product Name">
+    <input type="text" id="category" placeholder="Category">
+    <input type="text" id="subcategory" placeholder="Subcategory">
+    <input type="text" id="img" placeholder="Image URL">
+    <input type="text" id="link" placeholder="Product Link">
+    <input type="text" id="price" placeholder="Price">
+    <input type="number" id="rating" placeholder="Rating (1-5)" min="1" max="5">
+    
+    <button onclick="addProduct()">Add Product</button>
+    <h3>Products List</h3>
+    <pre id="output"></pre>
+    
+    <button onclick="updateGitHubJSON()">Update GitHub JSON</button>
+
+    <script>
+        const GITHUB_USERNAME = "your-username";
+        const REPO_NAME = "your-main-repo"; // Repo where JSON files exist
+        const TOKEN = "your-github-token";  // GitHub PAT (keep secret)
+
+        let products = [];
+
+        function addProduct() {
+            let product = {
+                id: products.length + 1,
+                name: document.getElementById('name').value,
+                category: document.getElementById('category').value,
+                subcategory: document.getElementById('subcategory').value,
+                img: document.getElementById('img').value,
+                link: document.getElementById('link').value,
+                price: document.getElementById('price').value,
+                rating: parseFloat(document.getElementById('rating').value) || 4.0
+            };
+            
+            products.push(product);
+            document.getElementById('output').textContent = JSON.stringify(products, null, 4);
+            
+            // Clear input fields
+            document.querySelectorAll("input").forEach(input => input.value = "");
+        }
+
+        async function updateGitHubJSON() {
+            const selectedFile = document.getElementById('fileChoice').value;
+            const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${REPO_NAME}/contents/${selectedFile}`;
+
+            try {
+                // Fetch current SHA of the file
+                const response = await fetch(url, {
+                    headers: { Authorization: `token ${TOKEN}` }
+                });
+                const fileData = await response.json();
+                const sha = fileData.sha;
+
+                // Prepare update
+                const updatedContent = btoa(JSON.stringify(products, null, 4));
+                const commitMessage = `Updated ${selectedFile} via script`;
+
+                const body = JSON.stringify({
+                    message: commitMessage,
+                    content: updatedContent,
+                    sha: sha
+                });
+
+                // Send update request
+                const updateResponse = await fetch(url, {
+                    method: "PUT",
+                    headers: {
+                        Authorization: `token ${TOKEN}`,
+                        "Content-Type": "application/json"
+                    },
+                    body: body
+                });
+
+                const result = await updateResponse.json();
+
+                if (result.commit) {
+                    alert(`${selectedFile} updated successfully!`);
+                } else {
+                    alert("Failed to update. Check console.");
+                    console.error(result);
+                }
+            } catch (error) {
+                alert("Error updating JSON. Check console.");
+                console.error(error);
+            }
+        }
+    </script>
+</body>
+</html>
